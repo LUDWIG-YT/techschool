@@ -1,30 +1,38 @@
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Poppins;
-background:#0a0a0a;
+background:#0b0b0f;
 color:white;
 overflow-x:hidden;
 }
 
-header{
+/* HEADER */
+.header{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px;
 position:fixed;
 width:100%;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-header h1{
+.header h1{
 font-family:Playfair Display;
 letter-spacing:2px;
 }
 
 nav a{
-margin:10px;
-text-decoration:none;
+margin:0 10px;
 color:white;
+text-decoration:none;
 transition:0.3s;
 }
 
@@ -32,6 +40,7 @@ nav a:hover{
 color:#ff004c;
 }
 
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -39,15 +48,22 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#1a002f,#000);
+background:radial-gradient(circle at center, #1a0033, #000);
 }
 
 .hero h2{
-font-size:50px;
+font-size:55px;
 font-family:Playfair Display;
 }
 
+.hero p{
+margin:10px;
+opacity:0.8;
+}
+
+/* BOTÓN */
 .btn{
+margin-top:20px;
 padding:12px 30px;
 border:1px solid white;
 background:none;
@@ -61,6 +77,7 @@ background:white;
 color:black;
 }
 
+/* SECCIONES */
 .section{
 padding:100px 20px;
 text-align:center;
@@ -70,16 +87,24 @@ text-align:center;
 background:#111;
 }
 
+.title{
+font-size:30px;
+margin-bottom:30px;
+font-family:Playfair Display;
+}
+
+/* GRID */
 .grid{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 }
 
+/* CARDS */
 .card{
 background:rgba(255,255,255,0.05);
 margin:20px;
-padding:20px;
+padding:25px;
 width:220px;
 border:1px solid rgba(255,255,255,0.1);
 transition:0.4s;
@@ -87,10 +112,11 @@ transition:0.4s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 20px rgba(255,255,255,0.2);
+box-shadow:0 0 25px rgba(255,255,255,0.2);
 }
 
-form{
+/* FORM */
+.form{
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -101,13 +127,14 @@ margin:10px;
 padding:10px;
 width:250px;
 background:#111;
-border:1px solid white;
+border:1px solid #444;
 color:white;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
 background:#000;
+opacity:0.7;
 }
-
