@@ -1,26 +1,25 @@
 // Animación al hacer scroll
 
-const elementos = document.querySelectorAll('.card, .fade');
+const revealElements = document.querySelectorAll('.reveal, .fade');
 
-const mostrar = () => {
-    const trigger = window.innerHeight * 0.85;
+function reveal(){
+    let windowHeight = window.innerHeight;
 
-    elementos.forEach(el => {
-        const top = el.getBoundingClientRect().top;
+    revealElements.forEach(el => {
+        let elementTop = el.getBoundingClientRect().top;
 
-        if(top < trigger){
-            el.style.opacity = 1;
+        if(elementTop < windowHeight - 100){
+            el.style.opacity = "1";
             el.style.transform = "translateY(0)";
         }
     });
-};
+}
 
-window.addEventListener("scroll", mostrar);
+window.addEventListener("scroll", reveal);
 
 // estado inicial
-elementos.forEach(el => {
-    el.style.opacity = 0;
+revealElements.forEach(el => {
+    el.style.opacity = "0";
     el.style.transform = "translateY(40px)";
-    el.style.transition = "0.6s";
+    el.style.transition = "0.6s ease";
 });
-
