@@ -1,25 +1,44 @@
-// Animación al hacer scroll
+// LOADER
+window.onload=()=>loader.style.display="none";
 
-const revealElements = document.querySelectorAll('.reveal, .fade');
+// CURSOR
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
 
-function reveal(){
-    let windowHeight = window.innerHeight;
+// MENU
+menuBtn.onclick=()=>nav.classList.toggle("active");
 
-    revealElements.forEach(el => {
-        let elementTop = el.getBoundingClientRect().top;
+// DARK MODE
+modoBtn.onclick=()=>document.body.classList.toggle("light");
 
-        if(elementTop < windowHeight - 100){
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }
-    });
+// TOAST (fake backend)
+form.onsubmit=(e)=>{
+e.preventDefault();
+toast.style.display="block";
+setTimeout(()=>toast.style.display="none",2000);
+};
+
+// PARTICLES
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let p=[];
+for(let i=0;i<50;i++){
+p.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight});
 }
 
-window.addEventListener("scroll", reveal);
-
-// estado inicial
-revealElements.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(40px)";
-    el.style.transition = "0.6s ease";
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+p.forEach(dot=>{
+ctx.fillRect(dot.x,dot.y,2,2);
+dot.y+=0.3;
+if(dot.y>canvas.height)dot.y=0;
 });
+requestAnimationFrame(draw);
+}
+draw();
