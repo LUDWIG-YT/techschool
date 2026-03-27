@@ -1,35 +1,51 @@
 // LOADER
-window.onload=()=>loader.style.display="none";
+window.addEventListener("load", ()=>{
+document.getElementById("loader").style.display = "none";
+});
 
 // CURSOR
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e=>{
+cursor.style.left = e.clientX+"px";
+cursor.style.top = e.clientY+"px";
 });
 
 // MENU
-menuBtn.onclick=()=>nav.classList.toggle("active");
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", ()=>{
+nav.classList.toggle("active");
+});
 
 // DARK MODE
-modoBtn.onclick=()=>document.body.classList.toggle("light");
+const modoBtn = document.getElementById("modoBtn");
 
-// TOAST (fake backend)
-form.onsubmit=(e)=>{
+modoBtn.addEventListener("click", ()=>{
+document.body.classList.toggle("light");
+});
+
+// FORM (FAKE BACKEND)
+const form = document.getElementById("form");
+const toast = document.getElementById("toast");
+
+form.addEventListener("submit", e=>{
 e.preventDefault();
 toast.style.display="block";
 setTimeout(()=>toast.style.display="none",2000);
-};
+});
 
 // PARTICLES
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=innerHeight;
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
 let p=[];
+
 for(let i=0;i<50;i++){
-p.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight});
+p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height});
 }
 
 function draw(){
