@@ -3,71 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechSchool Startup</title>
+<title>TechSchool | Premium Tech</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div id="loader" style="display:none;"><div class="spinner"></div></div>
-<div class="cursor"></div>
-<canvas id="particles"></canvas>
-
 <header class="header">
-<h1>TechSchool</h1>
+    <h1>TechSchool</h1>
 
-<div class="menu-btn" id="menuBtn">☰</div>
+    <div class="menu-btn" id="menuBtn">☰</div>
 
-<nav id="nav">
-<a href="#inicio">Inicio</a>
-<a href="#productos">Fundas</a>
-<a href="#servicios">Servicios</a>
-<a href="#contacto">Contacto</a>
-</nav>
-
-<button id="modoBtn">🌙</button>
+    <nav id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Fundas</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 </header>
 
 <section id="inicio" class="hero">
-<h2>未来のテクノロジー</h2>
-<p>Startup tech premium</p>
-<button class="btn">Explorar</button>
+    <h2 class="fade">未来のテクノロジー</h2>
+    <p class="fade">Tecnología premium con estética minimalista</p>
+    <a href="#productos"><button class="btn fade">Explorar</button></a>
 </section>
 
 <section id="productos" class="section">
-<h2>Productos</h2>
-<div class="grid">
-<div class="card">Zen</div>
-<div class="card">Sakura</div>
-<div class="card">Neo</div>
-</div>
+    <h2 class="title fade">Fundas Premium</h2>
+
+    <div class="grid">
+        <div class="card reveal">
+            <h3>Zen</h3>
+            <p>Diseño limpio y elegante</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Sakura</h3>
+            <p>Inspiración japonesa</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Neo</h3>
+            <p>Futurismo minimalista</p>
+        </div>
+    </div>
 </section>
 
 <section id="servicios" class="section dark">
-<h2>Servicios</h2>
-<div class="grid">
-<div class="card">Pantalla</div>
-<div class="card">Limpieza</div>
-<div class="card">Diagnóstico</div>
-</div>
+    <h2 class="title fade">Servicios</h2>
+
+    <div class="grid">
+        <div class="card reveal">
+            <h3>Pantalla</h3>
+            <p>Reemplazo profesional</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Limpieza</h3>
+            <p>Optimización interna</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Diagnóstico</h3>
+            <p>Revisión completa</p>
+        </div>
+    </div>
 </section>
 
 <section id="contacto" class="section">
-<h2>Contacto</h2>
-<form id="form">
-<input type="text" placeholder="Nombre" required>
-<input type="email" placeholder="Correo" required>
-<button class="btn">Enviar</button>
-</form>
+    <h2 class="title fade">Contacto</h2>
+
+    <form class="form reveal">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Mensaje"></textarea>
+        <button class="btn">Enviar</button>
+    </form>
 </section>
 
-<div id="toast">Mensaje enviado 🚀</div>
-
-<footer>
-<p>© 2026 TechSchool Startup</p>
+<footer class="footer">
+    <p>© 2026 TechSchool | LUDWIG-YT</p>
 </footer>
 
 <script src="script.js"></script>
