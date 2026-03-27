@@ -4,72 +4,35 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 font-family:Poppins;
 background:#0b0b0f;
 color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
 /* HEADER */
 .header{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px;
 position:fixed;
 width:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.5);
 backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.header h1{
-font-family:Playfair Display;
-letter-spacing:2px;
-}
-
-nav{
-display:flex;
 }
 
 nav a{
 margin:0 10px;
-text-decoration:none;
 color:white;
-transition:0.3s;
-}
-
-nav a:hover{
-opacity:0.6;
-}
-
-/* MENU MOBILE */
-.menu-btn{
-display:none;
-font-size:25px;
-cursor:pointer;
-}
-
-@media(max-width:768px){
-.menu-btn{display:block;}
-
-nav{
-display:none;
-flex-direction:column;
-position:absolute;
-top:60px;
-right:10px;
-background:black;
-padding:15px;
-}
-
-nav.active{
-display:flex;
-}
+text-decoration:none;
 }
 
 /* HERO */
@@ -80,27 +43,19 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(180deg,#1a0033,#000);
 }
 
 .hero h2{
 font-size:45px;
 font-family:Playfair Display;
-letter-spacing:2px;
 }
 
-.hero p{
-margin:10px 0;
-opacity:0.7;
-}
-
-/* BOTÓN */
+/* BUTTON */
 .btn{
-padding:12px 30px;
+padding:12px 28px;
 border:1px solid white;
 background:none;
 color:white;
-cursor:pointer;
 transition:0.3s;
 }
 
@@ -109,19 +64,14 @@ background:white;
 color:black;
 }
 
-/* SECCIONES */
+/* SECTIONS */
 .section{
 padding:100px 20px;
 text-align:center;
 }
 
 .dark{
-background:#111;
-}
-
-.title{
-font-family:Playfair Display;
-margin-bottom:40px;
+background:rgba(0,0,0,0.6);
 }
 
 /* GRID */
@@ -131,28 +81,20 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
-/* CARDS */
 .card{
-background:rgba(255,255,255,0.05);
 margin:20px;
 padding:25px;
 width:220px;
+background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
-transition:0.4s;
+transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(255,255,255,0.1);
 }
 
 /* FORM */
-.form{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
 input, textarea{
 margin:10px;
 padding:10px;
@@ -166,7 +108,6 @@ color:white;
 .footer{
 text-align:center;
 padding:20px;
-background:#000;
 opacity:0.6;
 }
 
@@ -174,5 +115,5 @@ opacity:0.6;
 .fade, .reveal{
 opacity:0;
 transform:translateY(40px);
-transition:0.8s ease;
+transition:0.8s;
 }
