@@ -6,12 +6,11 @@ box-sizing:border-box;
 
 body{
 font-family:Poppins;
-background:#0b0b0f;
+background:#07070a;
 color:white;
 overflow-x:hidden;
 }
 
-/* CANVAS */
 canvas{
 position:fixed;
 top:0;
@@ -21,7 +20,6 @@ height:100%;
 z-index:-1;
 }
 
-/* HEADER */
 .header{
 display:flex;
 justify-content:space-between;
@@ -38,14 +36,8 @@ margin:0 15px;
 color:white;
 text-decoration:none;
 opacity:0.8;
-transition:0.3s;
 }
 
-nav a:hover{
-opacity:1;
-}
-
-/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -54,49 +46,50 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding-top:60px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle, rgba(180,0,255,0.25), transparent);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:-1;
+filter:blur(60px);
 }
 
 .hero h2{
-font-size:48px;
+font-size:50px;
 font-family:Playfair Display;
 letter-spacing:3px;
-text-shadow:0 0 20px rgba(180,100,255,0.4);
+text-shadow:0 0 25px rgba(180,100,255,0.3);
 }
 
-.hero p{
-margin:15px 0;
-opacity:0.7;
-}
-
-/* LINEA DECORATIVA */
 .line{
 width:60px;
 height:2px;
-background:linear-gradient(90deg,transparent,#fff,transparent);
+background:white;
 margin:20px 0;
 }
 
-/* BOTÓN */
 .btn{
-padding:12px 30px;
-border:1px solid white;
-background:none;
+padding:14px 35px;
+border:1px solid rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.05);
 color:white;
-cursor:pointer;
 transition:0.3s;
 }
 
 .btn:hover{
 background:white;
 color:black;
+transform:scale(1.05);
 }
 
-/* GLOW */
-.glow{
-box-shadow:0 0 15px rgba(180,100,255,0.3);
-}
-
-/* SECCIONES */
 .section{
 padding:100px 20px;
 text-align:center;
@@ -106,26 +99,12 @@ text-align:center;
 background:rgba(0,0,0,0.6);
 }
 
-.title{
-font-family:Playfair Display;
-margin-bottom:40px;
-}
-
-/* TEXTO */
-.text{
-max-width:500px;
-margin:auto;
-opacity:0.7;
-}
-
-/* GRID */
 .grid{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 }
 
-/* CARDS */
 .card{
 margin:20px;
 padding:25px;
@@ -138,10 +117,8 @@ transition:0.4s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(180,100,255,0.2);
 }
 
-/* FORM */
 input, textarea{
 margin:10px;
 padding:10px;
@@ -151,16 +128,20 @@ border:1px solid #444;
 color:white;
 }
 
-/* FOOTER */
+#msg{
+display:none;
+margin-top:10px;
+color:#9f7fff;
+}
+
 .footer{
 text-align:center;
 padding:20px;
 opacity:0.5;
 }
 
-/* ANIMACIONES */
 .fade, .reveal{
 opacity:0;
 transform:translateY(40px);
-transition:0.8s ease;
+transition:0.8s;
 }
