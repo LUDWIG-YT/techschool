@@ -28,9 +28,7 @@
 
 <section id="inicio" class="hero">
 <h2 class="fade">未来のテクノロジー</h2>
-
 <div class="line"></div>
-
 <p class="fade">Tecnología premium con estética fluida</p>
 
 <a href="#productos">
@@ -68,16 +66,24 @@ Startup enfocada en diseño tecnológico premium, combinando simplicidad japones
 <section id="contacto" class="section dark">
 <h2 class="title fade">Contacto</h2>
 
-<form class="form reveal">
-<input type="text" placeholder="Nombre" required>
-<input type="email" placeholder="Correo" required>
-<textarea placeholder="Mensaje"></textarea>
+<form action="https://formspree.io/f/xzdkvzdk" method="POST" class="form reveal">
+
+<input type="text" name="nombre" placeholder="Nombre" required>
+
+<input type="email" name="correo" placeholder="Correo" required>
+
+<textarea name="mensaje" placeholder="Mensaje"></textarea>
+
 <button class="btn glow">Enviar</button>
+
 </form>
+
+<p id="msg">Mensaje enviado 🚀</p>
+
 </section>
 
 <footer class="footer">
-<p>© 2026 TechSchool</p>
+<p>© 2026 TechSchool | LUDWIG-YT</p>
 </footer>
 
 <script src="script.js"></script>
