@@ -17,7 +17,15 @@ el.style.transform = "translateY(0)";
 window.addEventListener("scroll", show);
 window.addEventListener("load", show);
 
-// LAVA PREMIUM
+// MENSAJE
+const form = document.querySelector("form");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", ()=>{
+msg.style.display = "block";
+});
+
+// LAVA
 const canvas = document.getElementById("lava");
 const ctx = canvas.getContext("2d");
 
@@ -44,11 +52,11 @@ function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 blobs.forEach(b=>{
-let gradient = ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
-gradient.addColorStop(0,"rgba(180,0,255,0.25)");
-gradient.addColorStop(1,"transparent");
+let g = ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
+g.addColorStop(0,"rgba(180,0,255,0.25)");
+g.addColorStop(1,"transparent");
 
-ctx.fillStyle = gradient;
+ctx.fillStyle = g;
 ctx.beginPath();
 ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
 ctx.fill();
