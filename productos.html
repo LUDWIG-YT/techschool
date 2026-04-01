@@ -1,0 +1,31 @@
+<body>
+
+<header>
+<h1>LUDWIG</h1>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="carrito.html">Carrito</a>
+</nav>
+</header>
+
+<section class="section">
+<h2>Fundas</h2>
+<div id="gridFundas" class="grid"></div>
+</section>
+
+<section class="section">
+<h2>Accesorios</h2>
+<div id="gridAcc" class="grid"></div>
+</section>
+
+<div id="toast"></div>
+
+<script src="js/app.js"></script>
+<script src="js/store.js"></script>
+
+<script>
+renderGrid("gridFundas","fundas");
+renderGrid("gridAcc","accesorios");
+</script>
+
+</body>
