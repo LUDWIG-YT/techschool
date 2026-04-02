@@ -1,0 +1,100 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
+body{background:#0f0a1a;color:#e9d5ff;}
+
+/* NAV */
+nav{
+    background:#1a102b;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+}
+nav a{color:white;margin-left:15px;text-decoration:none;}
+nav a:hover{color:#c084fc;}
+
+/* HERO */
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:0.5s;
+}
+
+/* BOTONES */
+button,.btn{
+    background:#7c3aed;
+    color:white;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+}
+button:hover{transform:scale(1.05);box-shadow:0 0 10px #a855f7;}
+
+/* GRID */
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    padding:20px;
+    gap:20px;
+}
+
+.card{
+    background:#1a102b;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.3s;
+}
+.card.show{opacity:1;transform:translateY(0);}
+.card:hover{transform:scale(1.05);box-shadow:0 0 15px #a855f7;}
+
+/* BUSCADOR */
+.search{text-align:center;margin:20px;}
+.search input{
+    padding:10px;
+    width:60%;
+    border-radius:10px;
+    border:none;
+    background:#1a102b;
+    color:white;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    padding:15px;
+    border-radius:50%;
+}
+
+/* LUDWIG BRAND */
+.ludwig{
+    text-align:center;
+    font-size:12px;
+    color:#a855f7;
+    margin-top:40px;
+    opacity:0.7;
+    letter-spacing:2px;
+}
+.ludwig:hover{
+    opacity:1;
+    text-shadow:0 0 8px #a855f7;
+}
+
+.ludwig-float{
+    position:fixed;
+    bottom:5px;
+    left:10px;
+    font-size:10px;
+    color:#a855f7;
+    opacity:0.3;
+}
