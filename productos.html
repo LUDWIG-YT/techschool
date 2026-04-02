@@ -1,31 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
 <body>
 
-<header>
-<h1>LUDWIG</h1>
 <nav>
-<a href="index.html">Inicio</a>
-<a href="carrito.html">Carrito</a>
+    <h1>FundasPro</h1>
+    <div>
+        <a href="index.html">Inicio</a>
+        <a href="carrito.html">Carrito</a>
+    </div>
 </nav>
-</header>
 
-<section class="section">
-<h2>Fundas</h2>
-<div id="gridFundas" class="grid"></div>
+<section class="productos">
+
+<div class="card">
+    <img src="img/funda1.jpg">
+    <h3>Funda Negra</h3>
+    <p>$150</p>
+    <button onclick="addToCart('Funda Negra',150)">Agregar</button>
+</div>
+
+<div class="card">
+    <img src="img/funda2.jpg">
+    <h3>Funda Transparente</h3>
+    <p>$120</p>
+    <button onclick="addToCart('Funda Transparente',120)">Agregar</button>
+</div>
+
 </section>
 
-<section class="section">
-<h2>Accesorios</h2>
-<div id="gridAcc" class="grid"></div>
-</section>
-
-<div id="toast"></div>
-
-<script src="js/app.js"></script>
-<script src="js/store.js"></script>
-
-<script>
-renderGrid("gridFundas","fundas");
-renderGrid("gridAcc","accesorios");
-</script>
-
+<script src="js/cart.js"></script>
 </body>
+</html>
