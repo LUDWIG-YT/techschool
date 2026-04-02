@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contacto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h2>Contacto</h2>
+
+<form action="https://formspree.io/f/xzdkvzdk" method="POST">
+<input name="nombre" placeholder="Nombre" required><br>
+<input name="email" type="email" required><br>
+<textarea name="mensaje"></textarea><br>
+<button>Enviar</button>
+</form>
+
+<button onclick="whatsapp()">WhatsApp</button>
+
+<a href="https://wa.me/5215611371548" class="whatsapp">💬</a>
+
+<footer class="ludwig">LUDWIG // NIGHTSHARK CLUB</footer>
+
+<script>
+function whatsapp(){
+window.open("https://wa.me/5215611371548");
+}
+</script>
+
+</body>
+</html>
