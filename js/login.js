@@ -1,11 +1,10 @@
 function login(){
-let u=document.getElementById("user").value;
-let p=document.getElementById("pass").value;
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
 
-if(u==="admin@ludwig.dev" && p==="0000"){
-localStorage.setItem("auth",true);
-window.location="dashboard.html";
-}else{
-document.getElementById("error").innerText="Error";
-}
+    if(user === "admin" && pass === "1234"){
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Datos incorrectos");
+    }
 }
