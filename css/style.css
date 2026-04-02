@@ -1,73 +1,65 @@
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{font-family:Poppins;background:#07070a;color:#fff}
-
-header{
-position:fixed;width:100%;
-display:flex;justify-content:space-between;
-padding:20px;background:rgba(0,0,0,0.6);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.section{padding:100px 20px;text-align:center}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+body {
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
-.card{
-background:#111;
-padding:20px;
-border:1px solid #333;
+nav {
+    background: #020617;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.btn{
-padding:10px 20px;
-border:1px solid white;
-background:none;
-color:white;
-cursor:pointer;
+nav h1 {
+    color: #38bdf8;
 }
 
-.dashboard{
-display:grid;
-grid-template-columns:1fr 1fr;
-height:100vh;
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
 }
 
-.terminal{
-background:black;
-color:#00ff88;
-padding:20px;
-font-family:monospace;
+nav a:hover {
+    color: #38bdf8;
 }
 
-.panel{
-background:#111;
-padding:20px;
+.hero {
+    text-align: center;
+    padding: 60px;
 }
 
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:999;
+.btn {
+    background: #38bdf8;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
 }
 
-.spinner{
-width:40px;
-height:40px;
-border:3px solid #333;
-border-top:3px solid white;
-border-radius:50%;
-animation:spin 1s linear infinite;
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+    gap: 20px;
 }
 
-@keyframes spin{
-to{transform:rotate(360deg)}
+.card {
+    background: #020617;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
 }
