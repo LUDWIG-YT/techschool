@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Carrito</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+<h1>Carrito</h1>
+<div>
+<a href="productos.html">← Seguir comprando</a>
+<a href="index.html">Inicio</a>
+</div>
+</nav>
+
+<div class="carrito-container">
+<ul id="lista"></ul>
+<h2 id="total"></h2>
+
+<button onclick="vaciar()">Vaciar carrito</button>
+</div>
+
+<a href="https://wa.me/525611371548" class="whatsapp">💬</a>
+
+<footer class="ludwig" onclick="adminAccess()">
+LUDWIG // NIGHTSHARK CLUB
+</footer>
+
+<script src="js/cart.js"></script>
+
+<script>
+function adminAccess(){
+window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>

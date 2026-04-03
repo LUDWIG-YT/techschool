@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Contacto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+<h1>Techschool</h1>
+<a href="index.html">Inicio</a>
+</nav>
+
+<section class="hero">
+
+<h2>Contáctanos</h2>
+<p>Resolvemos dudas, pedidos y reparaciones</p>
+
+<form action="https://formspree.io/f/xzdkvzdk" method="POST">
+
+<input name="nombre" placeholder="Tu nombre completo" required><br><br>
+
+<input name="email" type="email" placeholder="Tu correo electrónico" required><br><br>
+
+<textarea name="mensaje" placeholder="Describe tu problema o lo que necesitas..." required></textarea><br><br>
+
+<button>Enviar</button>
+
+</form>
+
+<br>
+
+<button onclick="whatsapp()">WhatsApp</button>
+
+</section>
+
+<a href="https://wa.me/525611371548" class="whatsapp">💬</a>
+
+<footer class="ludwig" onclick="adminAccess()">
+LUDWIG // NIGHTSHARK CLUB
+</footer>
+
+<script>
+function whatsapp(){
+window.open("https://wa.me/525611371548");
+}
+
+function adminAccess(){
+window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>

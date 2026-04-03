@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Hacker</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- MATRIX -->
+<canvas id="matrix"></canvas>
+
+<script>
+if(localStorage.getItem("login") !== "true"){
+    window.location.href="index.html";
+}
+</script>
+
+<h1 style="text-align:center;">Panel Admin</h1>
+
+<!-- CONSOLA -->
+<div class="console" id="console">
+    <p>> sistema iniciando...</p>
+</div>
+
+<!-- INPUT -->
+<div style="text-align:center;">
+    <input id="cmd" placeholder="comando..." style="width:60%;">
+    <button onclick="ejecutar()">Ejecutar</button>
+</div>
+
+<!-- PANEL RÁPIDO -->
+<div style="text-align:center; margin-top:20px;">
+    <input id="n" placeholder="Nombre producto"><br><br>
+    <input id="pr" placeholder="Precio"><br><br>
+    <button onclick="add()">Agregar rápido</button>
+    <button onclick="logout()">Cerrar sesión</button>
+</div>
+
+<footer class="ludwig">LUDWIG // NIGHTSHARK CLUB</footer>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
