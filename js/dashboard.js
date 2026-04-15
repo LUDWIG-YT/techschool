@@ -103,7 +103,13 @@ function ejecutar(){
             productos.push({
                 nombre,
                 precio,
-                img:"img/funda1.jpg"
+                let img = document.getElementById("img").value || "img/funda1.jpg";
+
+productos.push({
+    nombre,
+    precio,
+    img
+});
             });
 
             localStorage.setItem("productos", JSON.stringify(productos));
