@@ -2,45 +2,87 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Dashboard Hacker</title>
+<title>Dashboard Admin</title>
+
+<!-- =============================
+🎨 ESTILOS GENERALES
+============================= -->
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- MATRIX -->
+<!-- =============================
+🌌 FONDO MATRIX (EFECTO VISUAL)
+============================= -->
 <canvas id="matrix"></canvas>
 
+<!-- =============================
+🔐 PROTECCIÓN DE ACCESO
+============================= -->
 <script>
+// Si no hay sesión activa, regresa al inicio
 if(localStorage.getItem("login") !== "true"){
     window.location.href="index.html";
 }
 </script>
 
-<h1 style="text-align:center;">Panel Admin</h1>
+<!-- =============================
+🧠 TÍTULO PRINCIPAL
+============================= -->
+<h1 style="text-align:center;">Panel de Administración</h1>
 
-<!-- CONSOLA -->
+
+<!-- =============================
+💻 CONSOLA HACKER
+============================= -->
 <div class="console" id="console">
     <p>> sistema iniciando...</p>
 </div>
 
-<!-- INPUT -->
-<div style="text-align:center;">
-    <input id="cmd" placeholder="comando..." style="width:60%;">
+
+<!-- =============================
+⌨️ INPUT DE COMANDOS
+============================= -->
+<div style="text-align:center; margin-top:10px;">
+    <input id="cmd" placeholder="Escribe un comando..." style="width:60%;">
     <button onclick="ejecutar()">Ejecutar</button>
 </div>
 
-<!-- PANEL RÁPIDO -->
-<div style="text-align:center; margin-top:20px;">
-    <input id="n" placeholder="Nombre producto"><br><br>
+
+<!-- =============================
+📦 FORMULARIO DE PRODUCTOS
+============================= -->
+<div style="text-align:center; margin-top:30px;">
+
+    <!-- Nombre del producto -->
+    <input id="n" placeholder="Nombre del producto"><br><br>
+
+    <!-- Precio -->
     <input id="pr" placeholder="Precio"><br><br>
-    <button onclick="add()">Agregar rápido</button>
+
+    <!-- Ruta de imagen -->
+    <input id="img" placeholder="Ruta imagen (img/fundaX.jpg)"><br><br>
+
+    <!-- Botones -->
+    <button onclick="add()">Agregar producto</button>
     <button onclick="logout()">Cerrar sesión</button>
+
 </div>
 
-<footer class="ludwig">LUDWIG // NIGHTSHARK CLUB</footer>
 
+<!-- =============================
+📌 FOOTER (ACCESO OCULTO)
+============================= -->
+<footer class="ludwig">
+LUDWIG // NIGHTSHARK CLUB
+</footer>
+
+
+<!-- =============================
+⚙️ SCRIPT PRINCIPAL
+============================= -->
 <script src="js/dashboard.js"></script>
-<input id="img" placeholder="Ruta imagen (img/fundaX.jpg)">
+
 </body>
 </html>
