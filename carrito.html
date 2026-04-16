@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+<!-- =============================
+🧠 CONFIGURACIÓN GENERAL
+============================= -->
 <meta charset="UTF-8">
-<title>Carrito</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carrito | Techschool</title>
+
+<!-- 🎨 ESTILOS -->
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+<!-- =============================
+🧭 NAVBAR
+============================= -->
 <nav>
+
 <h1>Carrito</h1>
+
 <div>
 <a href="productos.html">← Seguir comprando</a>
 <a href="index.html">Inicio</a>
 </div>
+
 </nav>
 
+
+<!-- =============================
+🛒 CONTENEDOR DEL CARRITO
+============================= -->
 <div class="carrito-container">
+
+<!-- 📦 LISTA DE PRODUCTOS -->
 <ul id="lista"></ul>
+
+<!-- 💰 TOTAL -->
 <h2 id="total"></h2>
 
+
+<!-- 🔘 BOTONES -->
+<div style="margin-top:15px;">
+
 <button onclick="vaciar()">Vaciar carrito</button>
+
+<!-- 🔥 BOTÓN EXTRA UX -->
+<button onclick="window.location.href='productos.html'">
+Seguir comprando
+</button>
+
 </div>
 
+</div>
+
+
+<!-- =============================
+💬 WHATSAPP
+============================= -->
 <a href="https://wa.me/525611371548" class="whatsapp">💬</a>
 
+
+<!-- =============================
+📌 FOOTER + ADMIN
+============================= -->
 <footer class="ludwig" onclick="adminAccess()">
 LUDWIG // NIGHTSHARK CLUB
 </footer>
 
+
+<!-- =============================
+⚙️ SCRIPT PRINCIPAL
+============================= -->
 <script src="js/cart.js"></script>
 
+
+<!-- =============================
+🔐 ACCESO ADMIN
+============================= -->
 <script>
 function adminAccess(){
-window.location.href="login.html";
+    window.location.href="login.html";
 }
 </script>
 
