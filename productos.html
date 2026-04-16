@@ -1,40 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+<!-- =============================
+🧠 CONFIGURACIÓN GENERAL
+============================= -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fundas</title>
+
+<title>Fundas | Techschool</title>
+
+<!-- 🎨 ESTILOS -->
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+<!-- =============================
+🧭 NAVBAR (NAVEGACIÓN)
+============================= -->
 <nav>
+
 <h1>Techschool</h1>
+
 <div>
 <a href="index.html">Inicio</a>
 <a href="carrito.html">Carrito</a>
 </div>
+
 </nav>
 
+
+<!-- =============================
+🔍 BUSCADOR DE PRODUCTOS
+============================= -->
 <div class="search">
-<input id="buscar" placeholder="🔍 Buscar fundas...">
+
+<input 
+id="buscar" 
+placeholder="🔍 Buscar fundas..."
+>
+
 </div>
 
-<section id="productos" class="productos"></section>
 
+<!-- =============================
+📦 CONTENEDOR DE PRODUCTOS
+============================= -->
+<section id="productos" class="productos">
+
+<!-- 🔥 Los productos se insertan dinámicamente desde store.js -->
+
+</section>
+
+
+<!-- =============================
+💬 BOTÓN WHATSAPP
+============================= -->
 <a href="https://wa.me/525611371548" class="whatsapp">💬</a>
 
+
+<!-- =============================
+📌 FOOTER + ACCESO ADMIN
+============================= -->
 <footer class="ludwig" onclick="adminAccess()">
 LUDWIG // NIGHTSHARK CLUB
 </footer>
 
-<script src="js/store.js"></script>
+
+<!-- =============================
+⚙️ SCRIPTS (ORDEN IMPORTANTE)
+============================= -->
+
+<!-- 🧠 carrito primero (funciones) -->
 <script src="js/cart.js"></script>
 
+<!-- 🛒 productos después (usa carrito) -->
+<script src="js/store.js"></script>
+
+
+<!-- =============================
+🔐 FUNCIÓN ADMIN OCULTO
+============================= -->
 <script>
 function adminAccess(){
-window.location.href="login.html";
+    window.location.href="login.html";
 }
 </script>
 
