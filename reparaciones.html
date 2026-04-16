@@ -1,38 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+<!-- =============================
+🧠 CONFIGURACIÓN
+============================= -->
 <meta charset="UTF-8">
-<title>Reparaciones</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reparaciones | Techschool</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+<!-- =============================
+🧭 NAVBAR
+============================= -->
 <nav>
+
 <h1>Techschool</h1>
+
+<div>
 <a href="index.html">Inicio</a>
+<a href="productos.html">Fundas</a>
+<a href="carrito.html">Carrito</a>
+</div>
+
 </nav>
 
+
+<!-- =============================
+🔧 HERO
+============================= -->
+<section class="hero">
+
+<h2>Reparaciones</h2>
+<p>Servicio técnico especializado en dispositivos Xiaomi</p>
+
+</section>
+
+
+<!-- =============================
+📦 SERVICIOS
+============================= -->
 <section class="productos">
 
+<!-- 📱 PANTALLA -->
 <div class="card show">
 <h3>Pantalla Xiaomi</h3>
 <p>$800 - $1500</p>
 <button onclick="w('pantalla Xiaomi')">Solicitar</button>
 </div>
 
+<!-- 🔋 BATERÍA -->
 <div class="card show">
 <h3>Batería Xiaomi</h3>
 <p>$400 - $800</p>
 <button onclick="w('batería Xiaomi')">Solicitar</button>
 </div>
 
+<!-- 🔌 CENTRO DE CARGA -->
 <div class="card show">
 <h3>Centro de carga</h3>
 <p>$300</p>
 <button onclick="w('centro de carga')">Solicitar</button>
 </div>
 
+<!-- 🧠 DIAGNÓSTICO -->
 <div class="card show">
 <h3>Diagnóstico</h3>
 <p>Gratis</p>
@@ -41,16 +78,46 @@
 
 </section>
 
+
+<!-- =============================
+🚀 CTA FINAL
+============================= -->
+<section class="hero" style="height:60vh;">
+
+<h2>¿Tu equipo falla?</h2>
+<p>Contáctanos y lo solucionamos rápido</p>
+
+<button onclick="w('reparación general')">Enviar mensaje</button>
+
+</section>
+
+
+<!-- =============================
+💬 BOTÓN WHATSAPP
+============================= -->
 <a href="https://wa.me/525611371548" class="whatsapp">💬</a>
 
-<footer class="ludwig" onclick="adminAccess()">LUDWIG // NIGHTSHARK CLUB</footer>
 
+<!-- =============================
+📌 FOOTER
+============================= -->
+<footer class="ludwig" onclick="adminAccess()">
+LUDWIG // NIGHTSHARK CLUB
+</footer>
+
+
+<!-- =============================
+⚙️ SCRIPTS
+============================= -->
 <script src="js/repair.js"></script>
 
 <script>
+
+// 🔐 acceso admin oculto
 function adminAccess(){
-window.location.href="login.html";
+    window.location.href="login.html";
 }
+
 </script>
 
 </body>
