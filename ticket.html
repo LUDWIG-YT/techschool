@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!-- =============================
+🧠 CONFIGURACIÓN GENERAL
+============================= -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ticket | Techschool</title>
+
+<!-- 🎨 ESTILOS GENERALES -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- =============================
+🎟️ ESTILO PRO DEL TICKET
+============================= -->
+<style>
+
+/* Contenedor principal del ticket */
+.ticket{
+    max-width:400px;
+    margin:50px auto;
+
+    background:#000; /* fondo negro tipo consola */
+    color:#00ff88;   /* texto verde hacker */
+
+    padding:20px;
+    border-radius:10px;
+
+    font-family:monospace;
+
+    box-shadow:0 0 20px #00ff88;
+}
+
+/* Título */
+.ticket h2{
+    text-align:center;
+}
+
+/* Líneas separadoras */
+.ticket hr{
+    border:1px dashed #00ff88;
+}
+
+/* Espaciado */
+.ticket p{
+    margin:5px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =============================
+🧾 TICKET DE COMPRA
+============================= -->
+<div class="ticket">
+
+<!-- 🏪 Nombre de la tienda -->
+<h2>TECHSCHOOL</h2>
+
+<!-- 📅 Fecha (se llenará con JS) -->
+<p id="fecha"></p>
+
+<hr>
+
+<!-- 👤 Cliente -->
+<p><strong>Cliente:</strong> <span id="cliente"></span></p>
+
+<hr>
+
+<!-- 📦 Productos -->
+<div id="items">
+    <!-- Aquí JS insertará productos -->
+</div>
+
+<hr>
+
+<!-- 💰 Total -->
+<h3 id="total"></h3>
+
+<hr>
+
+<!-- 💬 Mensaje final -->
+<p style="text-align:center;">
+Gracias por tu compra 💜
+</p>
+
+</div>
+
+<!-- =============================
+⚙️ SCRIPT (LO AGREGAMOS DESPUÉS)
+============================= -->
+<!-- <script src="js/ticket.js"></script> -->
+
+</body>
+</html>
