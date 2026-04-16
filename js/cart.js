@@ -11,13 +11,10 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 // =============================
 function addToCart(nombre, precio){
 
-    // Se agrega el producto al carrito
     carrito.push({nombre, precio});
 
-    // Se guarda en el navegador
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // Mensaje visual
     alert("Agregado al carrito 🛒");
 }
 
@@ -30,14 +27,12 @@ function mostrar(){
     const lista = document.getElementById("lista");
     const totalHTML = document.getElementById("total");
 
-    // Si no existe la lista (ej: otra página), salir
     if(!lista) return;
 
     lista.innerHTML = "";
 
     let total = 0;
 
-    // Recorrer productos
     carrito.forEach((item, index) => {
 
         total += item.precio;
@@ -52,10 +47,9 @@ function mostrar(){
         lista.appendChild(li);
     });
 
-    // Mostrar total
     totalHTML.textContent = "Total: $" + total;
 
-    // 🔥 Mensaje si está vacío
+    // 🛒 Mensaje si está vacío
     if(carrito.length === 0){
         lista.innerHTML = "<p>El carrito está vacío 🛒</p>";
         totalHTML.textContent = "";
@@ -92,9 +86,35 @@ function vaciar(){
 // =============================
 // 🔢 FUNCIÓN: CONTAR PRODUCTOS
 // =============================
-// (para mostrar cantidad en el futuro)
 function cantidad(){
     return carrito.length;
+}
+
+
+// =============================
+// 💳 FUNCIÓN: COMPRA (TICKET PRO)
+// =============================
+function comprar(){
+
+    // 🛑 Validar carrito
+    if(carrito.length === 0){
+        alert("El carrito está vacío 🛒");
+        return;
+    }
+
+    // 👤 Pedir nombre
+    let nombre = prompt("Ingresa tu nombre:");
+
+    if(!nombre || nombre.trim() === ""){
+        alert("Debes ingresar un nombre válido");
+        return;
+    }
+
+    // 💾 Guardar cliente
+    localStorage.setItem("cliente", nombre.trim());
+
+    // 🚀 Ir al ticket
+    window.location.href = "ticket.html";
 }
 
 
