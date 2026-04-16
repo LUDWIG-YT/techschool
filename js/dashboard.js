@@ -1,13 +1,16 @@
 // =============================
-// PROTECCIÓN
+// 🔐 PROTECCIÓN DE ACCESO
 // =============================
+// Si no hay login activo, regresa al inicio
 if(localStorage.getItem("login") !== "true"){
     window.location.href = "index.html";
 }
 
+
 // =============================
-// BASE PRODUCTOS (FIJOS)
+// 📦 PRODUCTOS BASE (REFERENCIA)
 // =============================
+// Solo para mostrar en consola, NO se modifican
 let baseProductos = [
 {nombre:"Kuro Shield",precio:150,img:"img/funda1.jpg"},
 {nombre:"Clear Zen",precio:120,img:"img/funda2.jpg"},
@@ -21,27 +24,39 @@ let baseProductos = [
 {nombre:"Stand Pro X",precio:220,img:"img/funda10.jpg"}
 ];
 
+
 // =============================
-// ADMIN
+// 🧠 PRODUCTOS ADMIN
 // =============================
 let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
+
 // =============================
-// CONSOLA
+// 💻 CONSOLA (OPTIMIZADA)
 // =============================
 function log(msg){
     const c = document.getElementById("console");
+
     let p = document.createElement("p");
     p.textContent = "> " + msg;
+
     c.appendChild(p);
+
+    // 🔥 evita que se trabe la consola
+    if(c.children.length > 50){
+        c.removeChild(c.children[0]);
+    }
+
     c.scrollTop = c.scrollHeight;
 }
 
+
 // =============================
-// TYPEWRITER
+// ✍️ EFECTO TYPEWRITER
 // =============================
 function escribir(texto){
     let i = 0;
+
     function t(){
         if(i < texto.length){
             log(texto.charAt(i));
@@ -49,31 +64,37 @@ function escribir(texto){
             setTimeout(t,20);
         }
     }
+
     t();
 }
 
+
 // =============================
-// VER PRODUCTOS
+// 👀 VER PRODUCTOS
 // =============================
 function ver(){
+
     log("BASE:");
     baseProductos.forEach((p,i)=>{
-        log(i+" - "+p.nombre);
+        log(i + " - " + p.nombre);
     });
 
     log("ADMIN:");
     productos.forEach((p,i)=>{
-        log(i+" - "+p.nombre);
+        log(i + " - " + p.nombre);
     });
 }
 
+
 // =============================
-// COMANDOS
+// 🧠 COMANDOS DE CONSOLA
 // =============================
 function ejecutar(){
 
     let input = document.getElementById("cmd");
-    let comando = input.value.toLowerCase();
+    let comando = input.value.toLowerCase().trim();
+
+    if(!comando) return;
 
     log(comando);
 
@@ -87,11 +108,11 @@ function ejecutar(){
             log("borrar index");
             log("ver");
             log("reset");
-            log("hack");
             log("status");
         break;
 
         case "agregar":
+
             let nombre = partes[1];
             let precio = parseInt(partes[2]);
 
@@ -100,24 +121,23 @@ function ejecutar(){
                 return;
             }
 
+            // 🔥 imagen opcional
+            let img = document.getElementById("img")?.value || "img/default.jpg";
+
             productos.push({
                 nombre,
                 precio,
-                let img = document.getElementById("img").value || "img/funda1.jpg";
-
-productos.push({
-    nombre,
-    precio,
-    img
-});
+                img
             });
 
             localStorage.setItem("productos", JSON.stringify(productos));
 
-            log("agregado: "+nombre);
+            log("agregado: " + nombre);
+
         break;
 
         case "borrar":
+
             let index = parseInt(partes[1]);
 
             if(isNaN(index) || index < 0 || index >= productos.length){
@@ -131,7 +151,8 @@ productos.push({
 
             localStorage.setItem("productos", JSON.stringify(productos));
 
-            log("eliminado: "+eliminado);
+            log("eliminado: " + eliminado);
+
         break;
 
         case "ver":
@@ -140,34 +161,30 @@ productos.push({
 
         case "reset":
             localStorage.removeItem("productos");
-            productos=[];
+            productos = [];
             log("productos eliminados");
         break;
 
-        case "hack":
-            log("acceso concedido...");
-            log("iniciando protocolo...");
-        break;
-
         case "status":
-            log("sistema estable");
-            log("productos admin: "+productos.length);
+            log("productos admin: " + productos.length);
         break;
 
         default:
             log("comando no reconocido");
     }
 
-    input.value="";
+    input.value = "";
 }
 
+
 // =============================
-// BOTÓN RÁPIDO
+// ➕ BOTÓN RÁPIDO (FORMULARIO)
 // =============================
 function add(){
 
     let nombre = document.getElementById("n").value;
     let precio = parseInt(document.getElementById("pr").value);
+    let img = document.getElementById("img")?.value || "img/default.jpg";
 
     if(!nombre || !precio){
         log("error: completa campos");
@@ -177,24 +194,26 @@ function add(){
     productos.push({
         nombre,
         precio,
-        img:"img/funda1.jpg"
+        img
     });
 
     localStorage.setItem("productos", JSON.stringify(productos));
 
-    log("agregado rápido: "+nombre);
+    log("agregado rápido: " + nombre);
 }
 
+
 // =============================
-// LOGOUT
+// 🔓 LOGOUT
 // =============================
 function logout(){
     localStorage.removeItem("login");
     window.location.href="index.html";
 }
 
+
 // =============================
-// MATRIX
+// 🌌 EFECTO MATRIX
 // =============================
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -207,9 +226,13 @@ const fontSize = 14;
 const columnas = canvas.width / fontSize;
 
 const gotas = [];
-for(let i=0;i<columnas;i++) gotas[i]=1;
+
+for(let i=0;i<columnas;i++){
+    gotas[i]=1;
+}
 
 function dibujar(){
+
     ctx.fillStyle="rgba(0,0,0,0.05)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
@@ -217,17 +240,23 @@ function dibujar(){
     ctx.font=fontSize+"px monospace";
 
     for(let i=0;i<gotas.length;i++){
+
         const texto = letras[Math.floor(Math.random()*letras.length)];
+
         ctx.fillText(texto,i*fontSize,gotas[i]*fontSize);
 
         if(gotas[i]*fontSize > canvas.height && Math.random()>0.975){
             gotas[i]=0;
         }
+
         gotas[i]++;
     }
 }
 
 setInterval(dibujar,50);
 
+
+// =============================
+// 🚀 INICIO
 // =============================
 escribir("Techschool system online...");
