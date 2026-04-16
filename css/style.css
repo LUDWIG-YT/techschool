@@ -1,6 +1,7 @@
 /* =============================
-RESET Y BASE
+🧠 RESET GLOBAL
 ============================= */
+/* Elimina márgenes por defecto y define caja estándar */
 *{
     margin:0;
     padding:0;
@@ -8,9 +9,11 @@ RESET Y BASE
     font-family:Arial, sans-serif;
 }
 
+
 /* =============================
-FONDO (LAVA + IMAGEN)
+🌌 FONDO GENERAL (LAVA + IMAGEN)
 ============================= */
+/* Combina un degradado animado con una imagen */
 body{
     background:
     linear-gradient(270deg,#1a102bcc,#3b0764cc,#0f0a1acc,#6d28d9cc),
@@ -25,7 +28,8 @@ body{
     overflow-x:hidden;
 }
 
-/* GLOW SUAVE */
+
+/* 💡 EFECTO GLOW (BRILLO DIFUSO) */
 body::before{
     content:"";
     position:fixed;
@@ -39,16 +43,20 @@ body::before{
     z-index:-1;
 }
 
+
 /* =============================
-NAVBAR (GLASS)
+🧭 NAVBAR (EFECTO GLASS)
 ============================= */
+/* Barra superior con transparencia tipo vidrio */
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 20px;
+
     background:#1a102b80;
     backdrop-filter:blur(10px);
+
     position:sticky;
     top:0;
     z-index:100;
@@ -69,15 +77,18 @@ nav a:hover{
     color:#c084fc;
 }
 
+
 /* =============================
-HERO
+🎯 HERO (SECCIÓN PRINCIPAL)
 ============================= */
 .hero{
     height:90vh;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     text-align:center;
     padding:20px;
 }
@@ -85,24 +96,30 @@ HERO
 .hero h2{
     font-size:42px;
     margin-bottom:10px;
+
+    /* brillo neón */
     text-shadow:0 0 20px #a855f7;
 }
 
 .hero p{
     opacity:0.8;
     margin-bottom:20px;
+
     text-shadow:0 0 10px #7c3aed;
 }
 
+
 /* =============================
-BOTONES
+🔘 BOTONES
 ============================= */
 button, .btn{
     background:#7c3aed;
     color:white;
+
     padding:10px 20px;
     border:none;
     border-radius:10px;
+
     cursor:pointer;
     transition:0.3s;
 }
@@ -112,8 +129,9 @@ button:hover, .btn:hover{
     box-shadow:0 0 12px #a855f7;
 }
 
+
 /* =============================
-BUSCADOR
+🔍 BUSCADOR
 ============================= */
 .search{
     text-align:center;
@@ -123,34 +141,47 @@ BUSCADOR
 .search input{
     padding:12px;
     width:60%;
+
     border-radius:10px;
     border:none;
+
     background:#1a102b80;
     backdrop-filter:blur(10px);
+
     color:white;
     outline:none;
 }
 
+
 /* =============================
-GRID PRODUCTOS
+📦 GRID DE PRODUCTOS
 ============================= */
 .productos{
     display:grid;
+
+    /* diseño adaptable */
     grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+
     gap:20px;
     padding:20px;
 }
 
+
 /* =============================
-CARDS (GLASS)
+🧊 CARDS (EFECTO GLASS)
 ============================= */
 .card{
     background:#1a102b80;
     backdrop-filter:blur(10px);
+
     padding:20px;
     border-radius:15px;
+
     text-align:center;
+
     transition:0.3s;
+
+    /* animación inicial */
     opacity:0;
     transform:translateY(20px);
 }
@@ -165,11 +196,16 @@ CARDS (GLASS)
     box-shadow:0 0 20px #a855f7;
 }
 
-/* IMÁGENES */
+
+/* 🖼️ IMÁGENES DE PRODUCTO */
 .card img{
     width:100%;
+    height:220px; /* 🔥 tamaño uniforme */
+    object-fit:cover; /* evita deformaciones */
+
     border-radius:10px;
     margin-bottom:10px;
+
     transition:0.3s;
 }
 
@@ -178,8 +214,9 @@ CARDS (GLASS)
     filter:brightness(1.2);
 }
 
+
 /* =============================
-CARRITO
+🛒 CARRITO
 ============================= */
 .carrito-container{
     padding:20px;
@@ -194,31 +231,39 @@ CARRITO
     margin-bottom:10px;
 }
 
+
 /* =============================
-WHATSAPP
+💬 BOTÓN WHATSAPP
 ============================= */
 .whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
+
     background:#25d366;
     padding:15px;
     border-radius:50%;
+
     text-decoration:none;
     font-size:20px;
+
     box-shadow:0 0 10px #25d366;
 }
 
+
 /* =============================
-FOOTER LUDWIG
+📌 FOOTER (MARCA)
 ============================= */
 .ludwig{
     text-align:center;
     font-size:12px;
+
     color:#a855f7;
     margin-top:40px;
+
     opacity:0.7;
     letter-spacing:2px;
+
     cursor:pointer;
     transition:0.3s;
 }
@@ -228,17 +273,22 @@ FOOTER LUDWIG
     text-shadow:0 0 10px #a855f7;
 }
 
+
 /* =============================
-CONSOLA HACKER
+💻 CONSOLA HACKER
 ============================= */
 .console{
     background:black;
     color:#00ff88;
+
     padding:15px;
     margin:20px;
+
     font-family:monospace;
+
     border-radius:10px;
     box-shadow:0 0 15px #00ff88;
+
     height:250px;
     overflow-y:auto;
 }
@@ -247,8 +297,9 @@ CONSOLA HACKER
     margin:4px 0;
 }
 
+
 /* =============================
-MATRIX
+🌌 MATRIX CANVAS
 ============================= */
 #matrix{
     position:fixed;
@@ -259,14 +310,16 @@ MATRIX
     z-index:-2;
 }
 
+
 /* =============================
-ANIMACIONES
+✨ ANIMACIONES
 ============================= */
 .show{
     opacity:1 !important;
     transform:translateY(0) !important;
 }
 
+/* 🔥 ANIMACIÓN LAVA */
 @keyframes lava{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
