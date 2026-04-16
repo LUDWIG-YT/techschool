@@ -1,16 +1,25 @@
 // =============================
 // 🔐 PROTECCIÓN DE ACCESO
 // =============================
-// Si no hay login activo, regresa al inicio
 if(localStorage.getItem("login") !== "true"){
     window.location.href = "index.html";
 }
 
 
 // =============================
-// 📦 PRODUCTOS BASE (REFERENCIA)
+// 👤 USUARIO ACTIVO
 // =============================
-// Solo para mostrar en consola, NO se modifican
+let activo = localStorage.getItem("usuarioActivo");
+if(activo){
+    setTimeout(()=>{
+        log("usuario activo: " + activo);
+    },300);
+}
+
+
+// =============================
+// 📦 PRODUCTOS BASE
+// =============================
 let baseProductos = [
 {nombre:"Kuro Shield",precio:150,img:"img/funda1.jpg"},
 {nombre:"Clear Zen",precio:120,img:"img/funda2.jpg"},
@@ -32,7 +41,7 @@ let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 
 // =============================
-// 💻 CONSOLA (OPTIMIZADA)
+// 💻 CONSOLA
 // =============================
 function log(msg){
     const c = document.getElementById("console");
@@ -42,7 +51,7 @@ function log(msg){
 
     c.appendChild(p);
 
-    // 🔥 evita que se trabe la consola
+    // 🔥 evita lag
     if(c.children.length > 50){
         c.removeChild(c.children[0]);
     }
@@ -52,7 +61,7 @@ function log(msg){
 
 
 // =============================
-// ✍️ EFECTO TYPEWRITER
+// ✍️ TYPEWRITER
 // =============================
 function escribir(texto){
     let i = 0;
@@ -87,7 +96,7 @@ function ver(){
 
 
 // =============================
-// 🧠 COMANDOS DE CONSOLA
+// 🧠 COMANDOS
 // =============================
 function ejecutar(){
 
@@ -121,8 +130,12 @@ function ejecutar(){
                 return;
             }
 
-            // 🔥 imagen opcional
-            let img = document.getElementById("img")?.value || "img/default.jpg";
+            // 🔥 CORRECCIÓN IMPORTANTE
+            let imgInput = document.getElementById("img")?.value.trim();
+
+            let img = imgInput && imgInput !== "" 
+                ? imgInput 
+                : "img/funda1.jpg"; // fallback correcto
 
             productos.push({
                 nombre,
@@ -178,13 +191,18 @@ function ejecutar(){
 
 
 // =============================
-// ➕ BOTÓN RÁPIDO (FORMULARIO)
+// ➕ BOTÓN RÁPIDO
 // =============================
 function add(){
 
-    let nombre = document.getElementById("n").value;
+    let nombre = document.getElementById("n").value.trim();
     let precio = parseInt(document.getElementById("pr").value);
-    let img = document.getElementById("img")?.value || "img/default.jpg";
+
+    let imgInput = document.getElementById("img")?.value.trim();
+
+    let img = imgInput && imgInput !== "" 
+        ? imgInput 
+        : "img/funda1.jpg";
 
     if(!nombre || !precio){
         log("error: completa campos");
@@ -213,7 +231,7 @@ function logout(){
 
 
 // =============================
-// 🌌 EFECTO MATRIX
+// 🌌 MATRIX
 // =============================
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
