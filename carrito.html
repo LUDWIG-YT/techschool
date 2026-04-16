@@ -10,7 +10,6 @@
 
 <title>Carrito | Techschool</title>
 
-<!-- 🎨 ESTILOS -->
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -21,35 +20,50 @@
 🧭 NAVBAR
 ============================= -->
 <nav>
-
 <h1>Carrito</h1>
 
 <div>
 <a href="productos.html">← Seguir comprando</a>
 <a href="index.html">Inicio</a>
 </div>
-
 </nav>
 
 
 <!-- =============================
-🛒 CONTENEDOR DEL CARRITO
+🛒 CONTENEDOR PRINCIPAL
 ============================= -->
 <div class="carrito-container">
 
-<!-- 📦 LISTA DE PRODUCTOS -->
+<!-- 🧾 TÍTULO -->
+<h2 style="text-align:center; margin-bottom:15px;">
+Tu carrito 🛒
+</h2>
+
+<!-- 📦 LISTA -->
 <ul id="lista"></ul>
 
 <!-- 💰 TOTAL -->
-<h2 id="total"></h2>
+<h2 id="total" style="text-align:center; margin-top:15px;"></h2>
 
 
-<!-- 🔘 BOTONES -->
-<div style="margin-top:15px;">
+<!-- =============================
+🔘 BOTONES
+============================= -->
+<div style="
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+">
 
+<!-- 🧹 Vaciar -->
 <button onclick="vaciar()">Vaciar carrito</button>
 
-<!-- 🔥 BOTÓN EXTRA UX -->
+<!-- 💳 Comprar -->
+<button onclick="comprar()">Finalizar compra</button>
+
+<!-- 🔙 Regresar -->
 <button onclick="window.location.href='productos.html'">
 Seguir comprando
 </button>
@@ -66,7 +80,7 @@ Seguir comprando
 
 
 <!-- =============================
-📌 FOOTER + ADMIN
+📌 FOOTER
 ============================= -->
 <footer class="ludwig" onclick="adminAccess()">
 LUDWIG // NIGHTSHARK CLUB
@@ -74,13 +88,13 @@ LUDWIG // NIGHTSHARK CLUB
 
 
 <!-- =============================
-⚙️ SCRIPT PRINCIPAL
+⚙️ SCRIPT
 ============================= -->
 <script src="js/cart.js"></script>
 
 
 <!-- =============================
-🔐 ACCESO ADMIN
+🔐 ADMIN
 ============================= -->
 <script>
 function adminAccess(){
