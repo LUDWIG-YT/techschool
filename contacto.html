@@ -1,55 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+<!-- =============================
+🧠 CONFIGURACIÓN GENERAL
+============================= -->
 <meta charset="UTF-8">
-<title>Contacto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacto | Techschool</title>
+
+<!-- 🎨 ESTILOS -->
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+<!-- =============================
+🧭 NAVBAR
+============================= -->
 <nav>
+
 <h1>Techschool</h1>
+
 <a href="index.html">Inicio</a>
+
 </nav>
 
+
+<!-- =============================
+💬 SECCIÓN PRINCIPAL
+============================= -->
 <section class="hero">
 
 <h2>Contáctanos</h2>
 <p>Resolvemos dudas, pedidos y reparaciones</p>
 
+
+<!-- =============================
+📩 FORMULARIO (FORMSPREE)
+============================= -->
 <form action="https://formspree.io/f/xzdkvzdk" method="POST">
 
-<input name="nombre" placeholder="Tu nombre completo" required><br><br>
+<!-- 👤 Nombre -->
+<input 
+name="nombre" 
+placeholder="Tu nombre completo" 
+required
+><br><br>
 
-<input name="email" type="email" placeholder="Tu correo electrónico" required><br><br>
+<!-- 📧 Correo -->
+<input 
+name="email" 
+type="email" 
+placeholder="Tu correo electrónico" 
+required
+><br><br>
 
-<textarea name="mensaje" placeholder="Describe tu problema o lo que necesitas..." required></textarea><br><br>
+<!-- 📝 Mensaje -->
+<textarea 
+name="mensaje" 
+placeholder="Describe tu problema o lo que necesitas..." 
+required
+></textarea><br><br>
 
+<!-- 🔘 Enviar -->
 <button>Enviar</button>
 
 </form>
 
+
 <br>
 
-<button onclick="whatsapp()">WhatsApp</button>
+
+<!-- =============================
+💬 BOTÓN WHATSAPP DIRECTO
+============================= -->
+<button onclick="whatsapp()">Contactar por WhatsApp</button>
 
 </section>
 
+
+<!-- =============================
+💬 BOTÓN FLOTANTE
+============================= -->
 <a href="https://wa.me/525611371548" class="whatsapp">💬</a>
 
+
+<!-- =============================
+📌 FOOTER + ADMIN
+============================= -->
 <footer class="ludwig" onclick="adminAccess()">
 LUDWIG // NIGHTSHARK CLUB
 </footer>
 
+
+<!-- =============================
+⚙️ SCRIPTS
+============================= -->
 <script>
+
+// =============================
+// 💬 FUNCIÓN WHATSAPP
+// =============================
 function whatsapp(){
-window.open("https://wa.me/525611371548");
+    window.open("https://wa.me/525611371548");
 }
 
+
+// =============================
+// 🔐 ACCESO ADMIN
+// =============================
 function adminAccess(){
-window.location.href="login.html";
+    window.location.href="login.html";
 }
+
 </script>
 
 </body>
