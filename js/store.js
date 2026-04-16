@@ -1,6 +1,8 @@
 // =============================
-// PRODUCTOS BASE (SIEMPRE EXISTEN)
+// 📦 PRODUCTOS BASE (NO SE BORRAN)
 // =============================
+// Estos productos siempre existen en la tienda
+// Son el catálogo principal
 let baseProductos = [
 {nombre:"Kuro Shield",precio:150,img:"img/funda1.jpg"},
 {nombre:"Clear Zen",precio:120,img:"img/funda2.jpg"},
@@ -14,42 +16,68 @@ let baseProductos = [
 {nombre:"Stand Pro X",precio:220,img:"img/funda10.jpg"}
 ];
 
-// =============================
-// PRODUCTOS ADMIN (SOLO EXTRA)
-// =============================
-let productosAdmin = JSON.parse(localStorage.getItem("productos")) || [];
 
 // =============================
-// MEZCLA FINAL (CLAVE 🔥)
+// 🧠 PRODUCTOS ADMIN (DINÁMICOS)
 // =============================
+// Se cargan desde el almacenamiento del navegador
+// Aquí se guardan los que agregas desde el dashboard
+let productosAdmin = JSON.parse(localStorage.getItem("productos")) || [];
+
+
+// =============================
+// 🔥 FUNCIÓN: MEZCLAR PRODUCTOS
+// =============================
+// Une productos base + productos del admin
 function obtenerProductos(){
     return [...baseProductos, ...productosAdmin];
 }
 
-// =============================
-// DOM
-// =============================
-const cont = document.getElementById("productos");
-const buscador = document.getElementById("buscar");
 
 // =============================
-// RENDER
+// 🎯 DOM (ELEMENTOS HTML)
 // =============================
+const cont = document.getElementById("productos"); // contenedor de productos
+const buscador = document.getElementById("buscar"); // input de búsqueda
+
+
+// =============================
+// 🖼️ FUNCIÓN: VALIDAR IMAGEN
+// =============================
+// Si la imagen no existe o falla, usa una por defecto
+function validarImagen(img){
+    if(!img || img.trim() === ""){
+        return "img/default.jpg"; // imagen de respaldo
+    }
+    return img;
+}
+
+
+// =============================
+// 🎨 FUNCIÓN: RENDERIZAR PRODUCTOS
+// =============================
+// Genera las tarjetas dinámicamente
 function render(lista){
 
-    if(!cont) return;
+    if(!cont) return; // evita error si no existe el contenedor
 
-    cont.innerHTML = "";
+    cont.innerHTML = ""; // limpia antes de renderizar
 
     lista.forEach((p, index) => {
 
         let card = document.createElement("div");
         card.className = "card";
 
+        // Validar imagen antes de mostrar
+        let imagen = validarImagen(p.img);
+
         card.innerHTML = `
-            <img src="${p.img}" alt="${p.nombre}">
+            <img src="${imagen}" alt="${p.nombre}"
+                 onerror="this.src='img/default.jpg'">
+            
             <h3>${p.nombre}</h3>
             <p>$${p.precio}</p>
+
             <button onclick="addToCart('${p.nombre}',${p.precio})">
                 Agregar
             </button>
@@ -57,26 +85,30 @@ function render(lista){
 
         cont.appendChild(card);
 
+        // Animación progresiva
         setTimeout(()=>{
             card.classList.add("show");
         }, index * 80);
     });
 }
 
+
 // =============================
-// INICIO
+// 🚀 INICIO
 // =============================
 let productosTotales = obtenerProductos();
 render(productosTotales);
 
+
 // =============================
-// BUSCADOR
+// 🔍 BUSCADOR DINÁMICO
 // =============================
 if(buscador){
     buscador.addEventListener("keyup", () => {
 
         let texto = buscador.value.toLowerCase();
 
+        // Filtrar productos por nombre
         let filtrados = productosTotales.filter(p =>
             p.nombre.toLowerCase().includes(texto)
         );
